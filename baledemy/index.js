@@ -25,4 +25,17 @@ const classSchema = new Schema({
 });
 
 //nama model, skema
-mongoose.model('class', classSchema);
+// const classModel = mongoose.model('class', classSchema);
+
+// const nodejs = new classModel({
+//   judul: 'NodeJS',
+//   deskripsi: 'Belajar NodeJS',
+//   tglPosting: Date.now()
+// });
+
+// nodejs.save();
+
+// classModel.create({
+//   judul: 'ReactJS',
+//   deskripsi: 'Belajar ReactJS',
+// });
