@@ -25,7 +25,7 @@ const classSchema = new Schema({
 });
 
 //nama model, skema
-// const classModel = mongoose.model('class', classSchema);
+const classModel = mongoose.model('class', classSchema);
 
 // const nodejs = new classModel({
 //   judul: 'NodeJS',
@@ -39,3 +39,38 @@ const classSchema = new Schema({
 //   judul: 'ReactJS',
 //   deskripsi: 'Belajar ReactJS',
 // });
+
+//metode find
+// const cobaFind = classModel.find({judul:'ReactJS'}).then((result) => {
+//   console.log(result);
+// });
+
+// async function cobaFindOne() {
+//   const cobaFind = await classModel.findOne({judul:'NodeJS'});
+//   console.log(cobaFind);
+// }
+
+// cobaFindOne();
+
+// const cobaFindLike = classModel.find({judul:/JS/}, 'judul deskripsi').then((result) => {
+//   console.log(result);
+// });
+
+// const cobaFindById = classModel.findById('64eb6acbc24bd566b4b16603').then((result) => {
+//   console.log(result);
+// });
+
+//pakai builder
+// const query = classModel.find({judul:/JS/});
+// query.select('judul deskripsi');
+// query.exec().then((result) => {
+//   console.log(result);
+// });
+
+classModel.find({judul:/JS/})
+  .select('judul deskripsi')
+  .exec()
+  .then((result) => {
+    console.log(result);
+  });
+
